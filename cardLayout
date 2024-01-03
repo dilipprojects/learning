@@ -1,0 +1,1504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    xmlns:shimmer="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_40sdp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingTop="@dimen/_10sdp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:background="@color/colorPrimary"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/img_share"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_alignParentLeft="true"
+            android:padding="@dimen/_5sdp"
+            android:src="@drawable/ic_share_white" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/img_home"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:padding="@dimen/_5sdp"
+                android:layout_marginRight="@dimen/_5sdp"
+                android:src="@drawable/ic_home_white" />
+
+            <ImageView
+                android:id="@+id/img_cancel"
+                android:layout_width="@dimen/_30sdp"
+                android:layout_height="@dimen/_30sdp"
+                android:padding="@dimen/_5sdp"
+                android:src="@drawable/ic_close_white" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:background="#ebeef2"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ebeef2"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:background="#ebeef2"
+                android:layout_height="wrap_content">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_250sdp"
+                    android:background="@color/colorPrimary" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <LinearLayout
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txt_profile_name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_10sdp"
+                                    android:text="Profile"
+                                    android:maxLines="2"
+                                    android:ellipsize="end"
+                                    android:layout_marginRight="@dimen/_5sdp"
+                                    android:textColor="@color/white"
+                                    android:textSize="12sp" />
+
+                                <TextView
+                                    android:id="@+id/txt_company_name"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/_5sdp"
+                                    android:text="C Name"
+                                    android:textColor="@color/yellow"
+                                    android:textStyle="bold"
+                                    android:maxLines="2"
+                                    android:ellipsize="end"
+                                    android:textSize="12sp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imgLogout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/ic_cart_add"
+                            android:tint="@color/white" />
+
+
+                        <TextView
+                            android:id="@+id/txtJobsAddress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/jobs_near_by"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/smallmini" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/ic_account"
+                            android:tint="@color/white" />
+
+
+                        <TextView
+                            android:id="@+id/txtempJobSal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="10dp"
+                            android:text="@string/salary"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/smallmini" />
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rl_verified_job"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:gravity="center_vertical"
+                        android:visibility="gone"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="@dimen/_8sdp"
+                            android:layout_height="@dimen/_10sdp"
+                            android:layout_toStartOf="@+id/txt_verified"
+                            android:src="@drawable/ic_security_white"
+                            android:tint="@color/white" />
+
+
+                        <TextView
+                            android:id="@+id/txt_verified"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginLeft="4dp"
+                            android:text="@string/verified_job"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/vsmall" />
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:layout_marginTop="@dimen/_5sdp"
+                        android:background="@color/white" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/img_profile"
+                            android:layout_width="@dimen/_25sdp"
+                            android:layout_height="match_parent"
+                            android:layout_centerHorizontal="true"
+                            android:layout_gravity="center_vertical"
+                            android:elevation="1dp"
+                            android:src="@drawable/ic_up_arrow"/>
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txt_hr_name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:hint="Name "
+                                android:textColor="@color/white"
+                                android:textSize="10" />
+
+                            <TextView
+                                android:id="@+id/txt_hr_email"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_5sdp"
+                                android:hint="@string/email_id"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/mini" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="30dp"
+                                app:cardCornerRadius="10dp"
+                                app:contentPaddingBottom="15dp"
+                                app:contentPaddingLeft="15dp"
+                                app:contentPaddingRight="15dp"
+                                app:contentPaddingTop="15dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/tv_prof_name"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Details"
+                                        android:textColor="@color/black"
+                                        android:textSize="9sp"/>
+
+                                    <LinearLayout
+
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="10dp"
+                                        android:orientation="vertical">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="center"
+                                            android:orientation="vertical">
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:orientation="horizontal">
+
+                                                <LinearLayout
+                                                    android:layout_width="0dp"
+                                                    android:layout_weight="1"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="vertical">
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="10dp"
+                                                        android:orientation="vertical">
+
+
+                                                        <TextView
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_gravity="center"
+                                                            android:text="Category"
+                                                            android:textColor="@color/black"
+                                                            android:textSize="9sp"/>
+
+                                                        <TextView
+                                                            android:id="@+id/txt_job_category"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_gravity="center"
+                                                            android:paddingTop="@dimen/_5sdp"
+                                                            android:text="Not Disclosed"
+                                                            android:textColor="@color/black"
+                                                            android:textSize="9sp"/>
+
+                                                    </LinearLayout>
+
+                                                    <LinearLayout
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginTop="10sp"
+                                                        android:orientation="vertical">
+
+
+                                                        <TextView
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_gravity="center"
+                                                            android:text="@string/job_industry"
+                                                            android:textColor="@color/colorGrey"
+                                                            android:textSize="@dimen/mini"/>
+
+                                                        <TextView
+                                                            android:id="@+id/txt_job_industry"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_gravity="center"
+                                                            android:paddingTop="@dimen/_5sdp"
+                                                            android:text="@string/job_industry"
+                                                            android:textColor="@color/black"
+                                                            android:textSize="@dimen/small"/>
+
+                                                    </LinearLayout>
+
+                                                </LinearLayout>
+
+                                                <ImageView
+                                                    android:id="@+id/company_logo"
+                                                    android:layout_width="@dimen/_60sdp"
+                                                    android:layout_height="@dimen/_50sdp"
+                                                    android:src="@drawable/splash_screen_logo" />
+
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="@dimen/dimen_10dp"
+                                                android:orientation="vertical">
+
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="center"
+                                                    android:text="@string/type"
+                                                    android:textColor="@color/colorGrey"
+                                                    android:textSize="@dimen/mini"/>
+
+                                                <TextView
+                                                    android:id="@+id/txt_job_type"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="center"
+                                                    android:paddingTop="@dimen/_5sdp"
+                                                    android:text="@string/job_type"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="@dimen/small">
+
+                                                </TextView>
+
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="@dimen/dimen_10dp"
+                                                android:orientation="vertical">
+
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="center"
+                                                    android:text="@string/gender"
+                                                    android:textColor="@color/colorGrey"
+                                                    android:textSize="@dimen/mini">
+
+                                                </TextView>
+
+                                                <LinearLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="horizontal"
+                                                    android:layout_gravity="center"
+                                                    android:layout_weight="0.3"
+                                                    android:paddingTop="@dimen/_5sdp">
+
+                                                    <TextView
+                                                        android:id="@+id/txt_gender"
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:text="Male"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="@dimen/small"/>
+
+                                                </LinearLayout>
+
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="@dimen/dimen_10dp"
+                                                android:orientation="vertical">
+
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="center"
+                                                    android:text="@string/shift_timings"
+                                                    android:textColor="@color/colorGrey"
+                                                    android:textSize="@dimen/mini">
+
+                                                </TextView>
+
+                                                <LinearLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="horizontal"
+                                                    android:layout_gravity="center"
+                                                    android:paddingTop="@dimen/_5sdp">
+
+                                                    <TextView
+                                                        android:id="@+id/txt_working_time"
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:text="@string/job_timing"
+                                                        android:textColor="@color/black"
+                                                        android:textSize="@dimen/small"/>
+
+                                                    <TextView
+                                                        android:id="@+id/txt_working_day"
+                                                        android:layout_width="wrap_content"
+                                                        android:layout_height="wrap_content"
+                                                        android:paddingLeft="@dimen/_3sdp"
+                                                        android:text="@string/working_days"
+                                                        android:textColor="@color/black"
+                                                        android:visibility="gone"
+                                                        android:textSize="@dimen/small"/>
+
+                                                </LinearLayout>
+
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="@dimen/dimen_10dp"
+                                                android:orientation="vertical">
+
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="center"
+                                                    android:text="@string/job_address"
+                                                    android:textColor="@color/colorGrey"
+                                                    android:textSize="@dimen/mini">
+
+                                                </TextView>
+
+                                                <TextView
+                                                    android:id="@+id/txt_address"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="center"
+                                                    android:paddingTop="@dimen/_5sdp"
+                                                    android:text="@string/address"
+                                                    android:minLines="1"
+                                                    android:maxLines="3"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="@dimen/small">
+
+                                                </TextView>
+
+                                            </LinearLayout>
+
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+
+
+                                </LinearLayout>
+
+
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="30dp"
+                                app:cardCornerRadius="@dimen/dimen_10dp"
+                                app:contentPaddingBottom="15dp"
+                                app:contentPaddingLeft="15dp"
+                                app:contentPaddingRight="15dp"
+                                app:contentPaddingTop="15dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/txt_requirement"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/requirements"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/Extrasmall" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/dimen_10dp"
+                                        android:orientation="vertical">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="center"
+                                            android:orientation="vertical">
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="@dimen/_10sdp"
+                                                android:gravity="center_vertical"
+                                                android:orientation="horizontal">
+
+                                                <ImageView
+                                                    android:id="@+id/img_que"
+                                                    android:layout_width="@dimen/dimen_10dp"
+                                                    android:layout_height="wrap_content"
+                                                    android:adjustViewBounds="true"
+                                                    android:src="@drawable/ic_check_white"
+                                                    android:tint="@color/black" />
+
+
+                                                <TextView
+                                                    android:id="@+id/txt_qualification"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_centerHorizontal="true"
+                                                    android:layout_marginLeft="8dp"
+                                                    android:text="Not Disclosed"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="@dimen/smallmini" />
+
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="@dimen/_6sdp"
+                                                android:gravity="center_vertical"
+                                                android:orientation="horizontal">
+
+                                                <ImageView
+                                                    android:layout_width="@dimen/dimen_10dp"
+                                                    android:layout_height="wrap_content"
+                                                    android:adjustViewBounds="true"
+                                                    android:src="@drawable/ic_check_white"
+                                                    android:tint="@color/black" />
+
+
+                                                <TextView
+                                                    android:id="@+id/txt_experience"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_centerHorizontal="true"
+                                                    android:layout_marginLeft="8dp"
+                                                    android:text="Experience : Not Disclosed"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="@dimen/smallmini" />
+
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="@dimen/_6sdp"
+                                                android:gravity="center_vertical"
+                                                android:orientation="horizontal">
+
+                                                <ImageView
+                                                    android:layout_width="@dimen/dimen_10dp"
+                                                    android:layout_height="wrap_content"
+                                                    android:adjustViewBounds="true"
+                                                    android:src="@drawable/ic_check_white"
+                                                    android:tint="@color/black" />
+
+
+                                                <TextView
+                                                    android:id="@+id/txt_skill"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_centerHorizontal="true"
+                                                    android:layout_marginLeft="8dp"
+                                                    android:text="Not Disclosed"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="@dimen/smallmini" />
+
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="@dimen/_6sdp"
+                                                android:gravity="center_vertical"
+                                                android:orientation="horizontal">
+
+                                                <ImageView
+                                                    android:layout_width="@dimen/dimen_10dp"
+                                                    android:layout_height="wrap_content"
+                                                    android:adjustViewBounds="true"
+                                                    android:src="@drawable/ic_check_white"
+                                                    android:tint="@color/black" />
+
+
+                                                <TextView
+                                                    android:id="@+id/txt_english_skill"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_centerHorizontal="true"
+                                                    android:layout_marginLeft="8dp"
+                                                    android:text="Not Disclosed"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="@dimen/smallmini" />
+
+                                            </LinearLayout>
+
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+
+
+                                </LinearLayout>
+
+
+                            </androidx.cardview.widget.CardView>
+
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="30dp"
+                                app:cardCornerRadius="@dimen/dimen_10dp"
+                                app:contentPaddingBottom="15dp"
+                                app:contentPaddingLeft="15dp"
+                                app:contentPaddingRight="15dp"
+                                app:contentPaddingTop="15dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/txt_jd"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/job_description"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/Extrasmall" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/dimen_10dp"
+                                        android:orientation="vertical">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="center"
+                                            android:orientation="vertical">
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="@dimen/_10sdp"
+                                                android:orientation="horizontal">
+
+                                                <ImageView
+                                                    android:layout_width="@dimen/dimen_10dp"
+                                                    android:layout_height="wrap_content"
+                                                    android:adjustViewBounds="true"
+                                                    android:src="@drawable/ic_check_white"
+                                                    android:tint="@color/black" />
+
+
+                                                <TextView
+                                                    android:id="@+id/txt_job_desc"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_centerHorizontal="true"
+                                                    android:layout_marginLeft="8dp"
+                                                    android:text="Job Description Not Available"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="@dimen/smallmini" />
+
+                                            </LinearLayout>
+
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+
+
+                                </LinearLayout>
+
+
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="30dp"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                app:cardCornerRadius="@dimen/dimen_10dp"
+                                app:contentPaddingBottom="15dp"
+                                app:contentPaddingLeft="15dp"
+                                app:contentPaddingRight="15dp"
+                                app:contentPaddingTop="15dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/txt_interview_details"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/interview_details"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/Extrasmall">
+
+                                    </TextView>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/dimen_10dp"
+                                        android:orientation="vertical">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:gravity="center"
+                                            android:orientation="vertical">
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="@dimen/dimen_10dp"
+                                                android:orientation="vertical">
+
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="center"
+                                                    android:text="@string/interview_address"
+                                                    android:textColor="@color/colorGrey"
+                                                    android:textSize="@dimen/mini">
+
+                                                </TextView>
+
+                                                <TextView
+                                                    android:id="@+id/tv_interview_add"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="center"
+                                                    android:paddingTop="@dimen/_5sdp"
+                                                    android:text="Interview Address"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="@dimen/small">
+
+                                                </TextView>
+
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="@dimen/dimen_10dp"
+                                                android:orientation="vertical">
+
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="center"
+                                                    android:text="@string/interview_timing"
+                                                    android:textColor="@color/colorGrey"
+                                                    android:textSize="@dimen/mini">
+
+                                                </TextView>
+
+                                                <TextView
+                                                    android:id="@+id/txt_interview_timeing"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="center"
+                                                    android:paddingTop="@dimen/_5sdp"
+                                                    android:text="Date &amp; Time"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="@dimen/small">
+
+                                                </TextView>
+
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="@dimen/dimen_10dp"
+                                                android:orientation="vertical">
+
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="center"
+                                                    android:text="@string/number_of_opening"
+                                                    android:textColor="@color/colorGrey"
+                                                    android:textSize="@dimen/mini">
+
+                                                </TextView>
+
+                                                <TextView
+                                                    android:id="@+id/txt_no_of_opening"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="center"
+                                                    android:paddingTop="@dimen/_5sdp"
+                                                    android:text="Not Disclosed"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="10sp">
+
+                                                </TextView>
+
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="10dp"
+                                                android:orientation="vertical">
+
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="center"
+                                                    android:text="Text"
+                                                    android:textColor="black"
+                                                    android:textSize="10sp">
+
+                                                </TextView>
+
+                                                <TextView
+                                                    android:id="@+id/txt_interview_type"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="center"
+                                                    android:paddingTop="@dimen/_5sdp"
+                                                    android:text="No"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="10sp">
+
+                                                </TextView>
+
+                                            </LinearLayout>
+
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/card_add_pref"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="30dp"
+                                app:cardCornerRadius="10dp"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                app:contentPaddingBottom="15dp"
+                                app:contentPaddingLeft="15dp"
+                                app:contentPaddingRight="15dp"
+                                android:visibility="gone"
+                                app:contentPaddingTop="15dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="@dimen/_5sdp"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/additional_preferences"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/Extrasmall" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/dimen_10dp"
+                                        android:orientation="vertical">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:gravity="center"
+                                            android:orientation="vertical">
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="@dimen/_10sdp"
+                                                android:orientation="horizontal">
+
+                                                <ImageView
+                                                    android:layout_width="@dimen/dimen_10dp"
+                                                    android:layout_height="wrap_content"
+                                                    android:adjustViewBounds="true"
+                                                    android:src="@drawable/ic_check_white"
+                                                    android:tint="@color/black" />
+
+
+                                                <TextView
+                                                    android:id="@+id/txt_preference_info"
+                                                    android:layout_width="wrap_content"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_centerHorizontal="true"
+                                                    android:layout_marginLeft="8dp"
+                                                    android:text="Women Candidate , Physical Disability"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="@dimen/smallmini" />
+
+                                            </LinearLayout>
+
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+
+
+                                </LinearLayout>
+
+
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/card_third_party"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="30dp"
+                                android:layout_marginBottom="@dimen/_5sdp"
+                                app:cardCornerRadius="@dimen/dimen_10dp"
+                                app:contentPaddingBottom="15dp"
+                                app:contentPaddingLeft="15dp"
+                                app:contentPaddingRight="15dp"
+                                android:visibility="visible"
+                                app:contentPaddingTop="15dp">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="@string/third_party_company_details"
+                                        android:textColor="@color/black"
+                                        android:textSize="@dimen/Extrasmall">
+
+                                    </TextView>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="@dimen/dimen_10dp"
+                                        android:orientation="vertical">
+
+                                        <LinearLayout
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:layout_weight="1"
+                                            android:gravity="center"
+                                            android:orientation="vertical">
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="@dimen/dimen_10dp"
+                                                android:orientation="vertical">
+
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="center"
+                                                    android:text="@string/company_name"
+                                                    android:textColor="@color/colorGrey"
+                                                    android:textSize="@dimen/mini">
+
+                                                </TextView>
+
+                                                <TextView
+                                                    android:id="@+id/tv_third_company_name"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="center"
+                                                    android:paddingTop="@dimen/_5sdp"
+                                                    android:text="Name"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="@dimen/small">
+
+                                                </TextView>
+
+                                            </LinearLayout>
+
+                                            <LinearLayout
+                                                android:layout_width="match_parent"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginTop="@dimen/dimen_10dp"
+                                                android:orientation="vertical">
+
+
+                                                <TextView
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="center"
+                                                    android:text="Company Address"
+                                                    android:textColor="@color/colorGrey"
+                                                    android:textSize="@dimen/mini">
+
+                                                </TextView>
+
+                                                <TextView
+                                                    android:id="@+id/txt_third_address"
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:layout_gravity="center"
+                                                    android:paddingTop="@dimen/_5sdp"
+                                                    android:text="Work Address"
+                                                    android:textColor="@color/black"
+                                                    android:textSize="@dimen/small">
+
+                                                </TextView>
+
+                                            </LinearLayout>
+
+                                        </LinearLayout>
+
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="30dp"
+                                app:cardCornerRadius="@dimen/dimen_10dp"
+                                app:contentPaddingBottom="15dp"
+                                android:visibility="visible">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="vertical">
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="@dimen/_80sdp"
+                                        android:background="@color/colorPrimary"
+                                        android:gravity="center_vertical"
+                                        android:orientation="horizontal"
+                                        android:paddingLeft="@dimen/_10sdp"
+                                        android:paddingRight="@dimen/_10sdp">
+
+                                        <ImageView
+                                            android:id="@+id/img_friends"
+                                            android:layout_width="@dimen/_20sdp"
+                                            android:layout_height="wrap_content"
+                                            android:src="@drawable/ic_people_white" />
+
+                                        <TextView
+                                            android:id="@+id/txt_ref_message"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="@dimen/_5sdp"
+                                            android:layout_weight="1"
+                                            android:text="@string/recommend_job_to_friends"
+                                            android:textColor="@color/white"
+                                            android:textSize="@dimen/small" />
+
+                                        <LinearLayout
+                                            android:id="@+id/refer_friend"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="@dimen/_25sdp"
+                                            android:layout_marginLeft="@dimen/_5sdp"
+                                            android:gravity="center"
+                                            android:paddingLeft="@dimen/_5sdp"
+                                            android:paddingRight="@dimen/_5sdp"
+                                            android:background="@drawable/drawable_rounded_white"
+                                            android:orientation="horizontal">
+
+                                            <ImageView
+                                                android:layout_width="@dimen/_10sdp"
+                                                android:layout_height="@dimen/_10sdp"
+                                                android:src="@drawable/ic_share_white"
+                                                android:tint="@color/colorPrimary"/>
+
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:text="@string/share_job"
+                                                android:textColor="@color/colorPrimary"
+                                                android:textSize="@dimen/small"
+                                                android:paddingLeft="@dimen/_5sdp"/>
+
+                                        </LinearLayout>
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="@dimen/dimen_10dp"
+                                        android:paddingLeft="@dimen/_10sdp"
+                                        android:paddingRight="@dimen/_10sdp"
+                                        android:layout_marginBottom="@dimen/dimen_10dp"
+                                        android:orientation="horizontal">
+
+                                        <TextView
+                                            android:id="@+id/report_recuritor"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:text="@string/report"
+                                            android:textAllCaps="true"
+                                            android:textColor="@color/colorRed"
+                                            android:textSize="@dimen/dimen_12dp" />
+
+                                        <TextView
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_weight="0.5"
+                                            android:paddingLeft="@dimen/_1sdp"
+                                            android:text="@string/a_problem_with_this_job"
+                                            android:textColor="@color/colorGrey"
+                                            android:textSize="@dimen/mini" />
+
+
+                                        <TextView
+                                            android:id="@+id/txt_job_posting_time"
+                                            android:layout_width="0dp"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:layout_weight="0.5"
+                                            android:text=""
+                                            android:textColor="@color/colorGrey"
+                                            android:textSize="@dimen/mini" />
+
+
+                                    </LinearLayout>
+
+                                </LinearLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:paddingStart="@dimen/_10sdp"
+                android:paddingLeft="20dp"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                android:paddingRight="20dp"
+                android:paddingBottom="@dimen/_10sdp">
+
+                <LinearLayout
+                    android:id="@+id/ll_whatapp"
+                    android:layout_width="@dimen/_90sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_marginLeft="@dimen/_8sdp"
+                    android:layout_marginRight="@dimen/_5sdp"
+                    android:background="@drawable/drawable_rounded_border_blue"
+                    android:gravity="center"
+                    android:layout_alignParentStart="true"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:paddingRight="5dp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:src="@drawable/whatsapp"
+                        android:tint="@color/colorPrimary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/_5sdp"
+                        android:text="@string/whatsapp"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/small" />
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/ll_call"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_toRightOf="@+id/ll_whatapp"
+                    android:layout_toLeftOf="@+id/btn_apply"
+                    android:background="@drawable/drawable_rounded_border_blue"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:orientation="horizontal"
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:paddingRight="5dp">
+
+                    <ImageView
+                        android:layout_width="@dimen/_10sdp"
+                        android:layout_height="@dimen/_10sdp"
+                        android:src="@drawable/ic_call_white"
+                        android:tint="@color/colorPrimary" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="@dimen/_5sdp"
+                        android:text="Call"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/small" />
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_apply"
+                    android:layout_width="@dimen/_80sdp"
+                    android:layout_height="@dimen/_30sdp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="@dimen/_5sdp"
+                    android:layout_marginRight="@dimen/_8sdp"
+                    android:background="@drawable/drawable_verify_rounded"
+                    android:gravity="center"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="5dp"
+                    android:text="@string/job_apply"
+                    android:layout_alignParentEnd="true"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/small" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_similar_jobs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="visible"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:paddingLeft="@dimen/_10sdp"
+                android:background="@color/app_bg_light_gray"
+                android:paddingRight="@dimen/_10sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_10sdp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_similar_jobs"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Similar Jobs"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/Normal"/>
+
+                    <TextView
+                        android:id="@+id/tv_view_all_similar_jobs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="See All Similar Jobs >>"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="@dimen/SubnormalSamll"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dimen_10dp"
+                        android:orientation="vertical">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_similar_jobs"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"/>
+
+                        <LinearLayout
+                            android:id="@+id/ll_no_job_found"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:padding="@dimen/_10sdp"
+                            android:visibility="gone"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:layout_width="@dimen/_100sdp"
+                                android:layout_height="@dimen/_100sdp"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:src="@drawable/job_not_found"/>
+                            <TextView
+                                android:id="@+id/tv_no_data_found_all_job"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_10sdp"
+                                android:visibility="visible"
+                                android:gravity="center"
+                                android:text="@string/no_data_found" />
+                            <TextView
+                                android:id="@+id/tv_no_found_click"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/try_again"
+                                android:gravity="center"
+                                android:paddingTop="@dimen/_5sdp"
+                                android:textColor="@color/colorPrimary"/>
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_browse_job"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_15sdp"
+                android:paddingLeft="@dimen/_10sdp"
+                android:visibility="gone"
+                android:layout_marginBottom="@dimen/_35sdp"
+                android:background="@color/app_bg_light_gray"
+                android:paddingRight="@dimen/_10sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/_5sdp"
+                    android:layout_marginTop="10px"
+                    android:layout_marginBottom="10px"
+                    android:paddingLeft="@dimen/_10sdp"
+                    android:paddingRight="@dimen/_10sdp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/_5sdp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:adjustViewBounds="true"
+                            android:tint="@color/colorPrimary"
+                            android:src="@drawable/ic_touch" />
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="1"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:layout_margin="10dp"
+                            android:gravity="center_vertical"
+                            android:text="@string/popular_job_categories"
+                            android:textColor="@color/colorPrimary"
+                            android:textSize="@dimen/dimen_16dp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tv_viewAllCategory"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:text="@string/view_all"
+                            android:layout_margin="10dp"
+                            android:textColor="@color/colorPrimary"
+                            android:textStyle="bold"
+                            android:textSize="@dimen/dimen_16dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="@dimen/_5sdp">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_browse_job_cat"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_80sdp"
+                            android:clipToPadding="false"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
